@@ -51,7 +51,8 @@ namespace CS_Calc
             {
                 Console.Clear();
                 Console.Write("Number: ");
-                c = Convert.ToDouble(Console.ReadLine());
+                try { c = Convert.ToDouble(Console.ReadLine()); }
+                catch { c = 0; }
                 Console.Clear();
             }
             else if (choice == "6") { Console.Clear(); System.Environment.Exit(1); }
