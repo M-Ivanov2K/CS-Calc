@@ -67,11 +67,7 @@ namespace CS_Calc
             else if (choice == "2") /* (-) */ { Console.WriteLine("The answer for " + a + " - " + b + " is: " + (a - b) + "\n"); }
             else if (choice == "3") /* (*) */ { Console.WriteLine("The answer for " + a + " * " + b + " is: " + (a * b) + "\n"); }
             else if (choice == "4") /* (/) */ { Console.WriteLine("The answer for " + a + " / " + b + " is: " + (a / b) + "\n"); }
-            else if (choice == "5") /* (Square Root) */
-            {
-                Console.Clear();
-                Console.WriteLine("The square root of " + c + " is: " + Math.Sqrt(c) + "\n");
-            }
+            else if (choice == "5") /* (Square Root) */ { Console.WriteLine("The square root of " + c + " is: " + Math.Sqrt(c) + "\n"); }
 
             Console.Write("Press any key to go back to the main menu..");
             Console.ReadKey();
