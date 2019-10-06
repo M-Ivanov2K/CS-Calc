@@ -25,73 +25,58 @@ namespace CS_Calc
 
         static void Main()
         {
+            int a = 0; int b = 0; double c = 0;
+
             Dots();
             Console.Clear();
             Console.WriteLine("W E L C O M E!");
             Console.WriteLine("==============\n");
             Console.WriteLine("Choose an operation:");
-            Console.WriteLine("1) Addition\n2) Subtraction\n3) Multiplication\n4) Division\n5) Find Square Root\n");
+            Console.WriteLine("1) Addition\n2) Subtraction\n3) Multiplication\n4) Division\n5) Find Square Root\n6) Exit\n");
             Console.Write("Select a number: ");
             String choice = Console.ReadLine();
-            //TO FIX --- Find a new way to query the items, without calling the methods themselves. This breaks the program.
-            //var a = OpCommon().Item1;
-            //var b = OpCommon().Item2;
-            //var c = OpSqrt().Item1;
-            
-            if (choice == "1") /* (+) */
+
+            if (choice == "1" || choice == "2" || choice == "3" || choice == "4")
             {
                 Console.Clear();
-                //Console.WriteLine("The answer for " + a + " + " + b + " is: " + (a + b));
+                Console.Write("First number: ");
+                try { a = Convert.ToInt32(Console.ReadLine()); }
+                catch { a = 0; }
+                Console.Write("Second number: ");
+                try { b = Convert.ToInt32(Console.ReadLine()); }
+                catch { b = 0; }
+                Console.Clear();
             }
-            else if (choice == "2") /* (-) */
+            else if (choice == "5")
             {
                 Console.Clear();
-                //Console.WriteLine("The answer for " + a + " - " + b + " is: " + (a - b));
+                Console.Write("Number: ");
+                c = Convert.ToDouble(Console.ReadLine());
+                Console.Clear();
             }
-            else if (choice == "3") /* (*) */
+            else if (choice == "6") { Console.Clear(); System.Environment.Exit(1); }
+            else
             {
                 Console.Clear();
-                //Console.WriteLine("The answer for " + a + " * " + b + " is: " + (a * b));
+                Console.WriteLine("Choose a valid option! (1-5)\n");
+                Main();
             }
-            else if (choice == "4") /* (/) */
-            {
-                Console.Clear();
-                //Console.WriteLine("The answer for " + a + " / " + b + " is: " + (a / b));
-            }
+
+            // Operations
+            if (choice == "1") /* (+) */ { Console.WriteLine("The answer for " + a + " + " + b + " is: " + (a + b) + "\n"); }
+            else if (choice == "2") /* (-) */ { Console.WriteLine("The answer for " + a + " - " + b + " is: " + (a - b) + "\n"); }
+            else if (choice == "3") /* (*) */ { Console.WriteLine("The answer for " + a + " * " + b + " is: " + (a * b) + "\n"); }
+            else if (choice == "4") /* (/) */ { Console.WriteLine("The answer for " + a + " / " + b + " is: " + (a / b) + "\n"); }
             else if (choice == "5") /* (Square Root) */
             {
                 Console.Clear();
-                //Console.WriteLine("The square root of " + c + " is: " + Math.Sqrt(c));
+                Console.WriteLine("The square root of " + c + " is: " + Math.Sqrt(c) + "\n");
             }
-            else 
-            {
-                Console.Clear();
-                Console.WriteLine("Choose a valid number! (1-5)\n");
-                Main();
-            }
-        }
 
-        // For 1-4
-        static Tuple<int, int> OpCommon()
-        {
+            Console.Write("Press any key to go back to the main menu..");
+            Console.ReadKey();
             Console.Clear();
-            Console.Write("First number: ");
-            String x = Console.ReadLine();
-            Console.Write("Second number: ");
-            String y = Console.ReadLine();
-            Int32.TryParse(x, out int a);
-            Int32.TryParse(y, out int b);
-            return new Tuple<int, int>(a, b);
-        }
-
-        // For 5
-        static Tuple<double> OpSqrt()
-        {
-            Console.Clear();
-            Console.Write("Number: ");
-            String x = Console.ReadLine();
-            double.TryParse(x, out double c);
-            return new Tuple<double>(c);
+            Main();
         }
 
     }
