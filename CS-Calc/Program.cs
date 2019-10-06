@@ -25,7 +25,7 @@ namespace CS_Calc
 
         static void Main()
         {
-            int a = 0; int b = 0; double c = 0;
+            double a = 0; double b = 0; double c = 0;
 
             Dots();
             Console.Clear();
@@ -40,10 +40,10 @@ namespace CS_Calc
             {
                 Console.Clear();
                 Console.Write("First number: ");
-                try { a = Convert.ToInt32(Console.ReadLine()); }
+                try { a = Convert.ToDouble(Console.ReadLine()); }
                 catch { a = 0; }
                 Console.Write("Second number: ");
-                try { b = Convert.ToInt32(Console.ReadLine()); }
+                try { b = Convert.ToDouble(Console.ReadLine()); }
                 catch { b = 0; }
                 Console.Clear();
             }
