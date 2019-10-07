@@ -5,7 +5,6 @@ namespace CS_Calc
 {
     class Program
     {
-
         // Dots
         static void Dots()
         {
@@ -59,7 +58,7 @@ namespace CS_Calc
             else
             {
                 Console.Clear();
-                Console.WriteLine("Choose a valid option! (1-5)\n");
+                Console.WriteLine("Choose a valid option! (1-6)\n");
                 Main();
             }
 
@@ -75,6 +74,5 @@ namespace CS_Calc
             Console.Clear();
             Main();
         }
-
     }
 }
