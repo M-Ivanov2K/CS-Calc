@@ -12,13 +12,13 @@ namespace CS_Calc
             {
                 String dot = new String('.', a);
                 Console.WriteLine(dot);
-                Thread.Sleep(120);
+                Thread.Sleep(90);
             }
             for (int b = 3; b >= 1; b--)
             {
                 String dot = new String('.', b);
                 Console.WriteLine(dot);
-                Thread.Sleep(120);
+                Thread.Sleep(90);
             }
         }
 
