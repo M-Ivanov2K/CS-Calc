@@ -35,29 +35,24 @@ namespace CS_Calc
             Console.Write("Select a number: ");
             String choice = Console.ReadLine();
 
+            Console.Clear();
             if (choice == "1" || choice == "2" || choice == "3" || choice == "4")
             {
-                Console.Clear();
                 Console.Write("First number: ");
-                try { a = Convert.ToDouble(Console.ReadLine()); }
-                catch { a = 0; }
+                try { a = Double.Parse(Console.ReadLine()); } catch { a = 0; }
                 Console.Write("Second number: ");
-                try { b = Convert.ToDouble(Console.ReadLine()); }
-                catch { b = 0; }
+                try { b = Double.Parse(Console.ReadLine()); } catch { b = 0; }
                 Console.Clear();
             }
             else if (choice == "5")
             {
-                Console.Clear();
                 Console.Write("Number: ");
-                try { c = Convert.ToDouble(Console.ReadLine()); }
-                catch { c = 0; }
+                try { c = Double.Parse(Console.ReadLine()); } catch { c = 0; }
                 Console.Clear();
             }
-            else if (choice == "6") { Console.Clear(); System.Environment.Exit(1); }
+            else if (choice == "6") { System.Environment.Exit(1); }
             else
             {
-                Console.Clear();
                 Console.WriteLine("Choose a valid option! (1-6)\n");
                 Main();
             }
