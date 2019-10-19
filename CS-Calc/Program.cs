@@ -25,6 +25,7 @@ namespace CS_Calc
         static void Main()
         {
             double a = 0; double b = 0; double c = 0;
+            bool loop = true;
 
             Dots();
             Console.Clear();
@@ -38,23 +39,54 @@ namespace CS_Calc
             Console.Clear();
             if (choice == "1" || choice == "2" || choice == "3" || choice == "4")
             {
-                Console.Write("First number: ");
-                try { a = Double.Parse(Console.ReadLine()); } catch { a = 0; }
-                Console.Write("Second number: ");
-                try { b = Double.Parse(Console.ReadLine()); } catch { b = 0; }
-                Console.Clear();
+                while (loop == true)
+                {
+                    try
+                    {
+                        Console.Write("First number: ");
+                        a = Double.Parse(Console.ReadLine());
+                        Console.Write("Second number: ");
+                        b = Double.Parse(Console.ReadLine());
+                        Console.Clear();
+                        loop = false;
+                    }
+                    catch (Exception)
+                    {
+                        Retry();
+                    }
+                }
             }
             else if (choice == "5")
             {
-                Console.Write("Number: ");
-                try { c = Double.Parse(Console.ReadLine()); } catch { c = 0; }
-                Console.Clear();
+                while (loop == true)
+                {
+                    try
+                    {
+                        Console.Write("Number: ");
+                        c = Double.Parse(Console.ReadLine());
+                        Console.Clear();
+                        loop = false;
+                    }
+                    catch (Exception)
+                    {
+                        Retry();
+                    }
+                }
             }
             else if (choice == "6") { System.Environment.Exit(1); }
             else
             {
                 Console.WriteLine("Choose a valid option! (1-6)\n");
                 Main();
+            }
+
+            // Retry number(s) request on exception
+            static void Retry()
+            {
+                Console.Clear();
+                Console.Write("Please try again..");
+                Thread.Sleep(600);
+                Console.Clear();
             }
 
             // Operations
