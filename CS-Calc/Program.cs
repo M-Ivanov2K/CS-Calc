@@ -80,15 +80,6 @@ namespace CS_Calc
                 Main();
             }
 
-            // Retry number(s) request on exception
-            static void Retry()
-            {
-                Console.Clear();
-                Console.Write("Please try again..");
-                Thread.Sleep(600);
-                Console.Clear();
-            }
-
             // Operations
             if (choice == "1") /* (+) */ { Console.WriteLine("The answer for " + a + " + " + b + " is: " + (a + b) + "\n"); }
             else if (choice == "2") /* (-) */ { Console.WriteLine("The answer for " + a + " - " + b + " is: " + (a - b) + "\n"); }
@@ -100,6 +91,15 @@ namespace CS_Calc
             Console.ReadKey();
             Console.Clear();
             Main();
+        }
+
+        // Retry number(s) request on exception
+        static void Retry()
+        {
+            Console.Clear();
+            Console.Write("Please try again..");
+            Thread.Sleep(600);
+            Console.Clear();
         }
     }
 }
